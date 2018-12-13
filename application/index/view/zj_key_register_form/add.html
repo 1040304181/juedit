@@ -1,0 +1,181 @@
+{extend name="layout" /}
+{block name="content"}
+<div class="container ">
+<div class="row">
+	<div class="col-md-6">
+		<div class="widget">
+			<div class="widget-head">
+			  <div class="pull-left" height="80">
+			 	新建zj_key_register_form			  </div>
+			  <div class="widget-icons pull-right">
+				<a href="#" class="wminimize"><i class="icon-chevron-up"></i></a> 
+				<a href="#" class="wclose"><i class="icon-remove"></i></a>
+			  </div>  
+			  <div class="clearfix"></div>
+			</div>  
+			<div class="widget-content" >
+			<div class="padd">
+				<div class="form quick-post">
+					  <div class="form-horizontal">                        
+						  <div class="form-group">
+							<form class="am-form tpl-form-border-form" method="post">
+		<div class="am-form-group">
+			<label for="ID" class="am-u-sm-12 am-form-label am-text-left">ID					<span class="tpl-form-line-small-title">ID</span></label>
+			<div class="am-u-sm-12">
+					<input type="text" 
+	value="{if condition="isset($zj_key_register_form.ID)"}{$zj_key_register_form.ID}{/if}"
+	class="tpl-form-input am-margin-top-xs" id="ID" name="ID" 
+	placeholder="请输入ID">			</div>
+	</div>
+		<div class="am-form-group">
+			<label for="name" class="am-u-sm-12 am-form-label am-text-left">name					<span class="tpl-form-line-small-title">name</span></label>
+			<div class="am-u-sm-12">
+					<input type="text" 
+	value="{if condition="isset($zj_key_register_form.name)"}{$zj_key_register_form.name}{/if}"
+	class="tpl-form-input am-margin-top-xs" id="name" name="name" 
+	placeholder="请输入name">			</div>
+	</div>
+		<div class="am-form-group">
+			<label for="NO" class="am-u-sm-12 am-form-label am-text-left">NO					<span class="tpl-form-line-small-title">NO</span></label>
+			<div class="am-u-sm-12">
+					<input type="text" 
+	value="{if condition="isset($zj_key_register_form.NO)"}{$zj_key_register_form.NO}{/if}"
+	class="tpl-form-input am-margin-top-xs" id="NO" name="NO" 
+	placeholder="请输入NO">			</div>
+	</div>
+		<div class="am-form-group">
+			<label for="type" class="am-u-sm-12 am-form-label am-text-left">type					<span class="tpl-form-line-small-title">type</span></label>
+			<div class="am-u-sm-12">
+					<input type="text" 
+	value="{if condition="isset($zj_key_register_form.type)"}{$zj_key_register_form.type}{/if}"
+	class="tpl-form-input am-margin-top-xs" id="type" name="type" 
+	placeholder="请输入type">			</div>
+	</div>
+		<div class="am-form-group">
+			<label for="num" class="am-u-sm-12 am-form-label am-text-left">num					<span class="tpl-form-line-small-title">num</span></label>
+			<div class="am-u-sm-12">
+					<input type="text" 
+	value="{if condition="isset($zj_key_register_form.num)"}{$zj_key_register_form.num}{/if}"
+	class="tpl-form-input am-margin-top-xs" id="num" name="num" 
+	placeholder="请输入num">			</div>
+	</div>
+		<div class="am-form-group">
+			<label for="unit" class="am-u-sm-12 am-form-label am-text-left">unit					<span class="tpl-form-line-small-title">unit</span></label>
+			<div class="am-u-sm-12">
+					<input type="text" 
+	value="{if condition="isset($zj_key_register_form.unit)"}{$zj_key_register_form.unit}{/if}"
+	class="tpl-form-input am-margin-top-xs" id="unit" name="unit" 
+	placeholder="请输入unit">			</div>
+	</div>
+		<div class="am-form-group">
+			<label for="cause" class="am-u-sm-12 am-form-label am-text-left">cause					<span class="tpl-form-line-small-title">cause</span></label>
+			<div class="am-u-sm-12">
+					<input type="text" 
+	value="{if condition="isset($zj_key_register_form.cause)"}{$zj_key_register_form.cause}{/if}"
+	class="tpl-form-input am-margin-top-xs" id="cause" name="cause" 
+	placeholder="请输入cause">			</div>
+	</div>
+		<div class="am-form-group">
+			<label for="borrowtime" class="am-u-sm-12 am-form-label am-text-left">borrowtime					<span class="tpl-form-line-small-title">borrowtime</span></label>
+			<div class="am-u-sm-12">
+					<input type="text" 
+	value="{if condition="isset($zj_key_register_form.borrowtime)"}{$zj_key_register_form.borrowtime}{/if}"
+	class="tpl-form-input am-margin-top-xs" id="borrowtime" name="borrowtime" 
+	placeholder="请输入borrowtime">			</div>
+	</div>
+		<div class="am-form-group">
+			<label for="borrower" class="am-u-sm-12 am-form-label am-text-left">borrower					<span class="tpl-form-line-small-title">borrower</span></label>
+			<div class="am-u-sm-12">
+					<input type="text" 
+	value="{if condition="isset($zj_key_register_form.borrower)"}{$zj_key_register_form.borrower}{/if}"
+	class="tpl-form-input am-margin-top-xs" id="borrower" name="borrower" 
+	placeholder="请输入borrower">			</div>
+	</div>
+		<div class="am-form-group">
+			<label for="tel" class="am-u-sm-12 am-form-label am-text-left">tel					<span class="tpl-form-line-small-title">tel</span></label>
+			<div class="am-u-sm-12">
+					<input type="text" 
+	value="{if condition="isset($zj_key_register_form.tel)"}{$zj_key_register_form.tel}{/if}"
+	class="tpl-form-input am-margin-top-xs" id="tel" name="tel" 
+	placeholder="请输入tel">			</div>
+	</div>
+		<div class="am-form-group">
+			<label for="borrowadmin" class="am-u-sm-12 am-form-label am-text-left">borrowadmin					<span class="tpl-form-line-small-title">borrowadmin</span></label>
+			<div class="am-u-sm-12">
+					<input type="text" 
+	value="{if condition="isset($zj_key_register_form.borrowadmin)"}{$zj_key_register_form.borrowadmin}{/if}"
+	class="tpl-form-input am-margin-top-xs" id="borrowadmin" name="borrowadmin" 
+	placeholder="请输入borrowadmin">			</div>
+	</div>
+		<div class="am-form-group">
+			<label for="deadline" class="am-u-sm-12 am-form-label am-text-left">deadline					<span class="tpl-form-line-small-title">deadline</span></label>
+			<div class="am-u-sm-12">
+					<input type="text" 
+	value="{if condition="isset($zj_key_register_form.deadline)"}{$zj_key_register_form.deadline}{/if}"
+	class="tpl-form-input am-margin-top-xs" id="deadline" name="deadline" 
+	placeholder="请输入deadline">			</div>
+	</div>
+		<div class="am-form-group">
+			<label for="returntime" class="am-u-sm-12 am-form-label am-text-left">returntime					<span class="tpl-form-line-small-title">returntime</span></label>
+			<div class="am-u-sm-12">
+					<input type="text" 
+	value="{if condition="isset($zj_key_register_form.returntime)"}{$zj_key_register_form.returntime}{/if}"
+	class="tpl-form-input am-margin-top-xs" id="returntime" name="returntime" 
+	placeholder="请输入returntime">			</div>
+	</div>
+		<div class="am-form-group">
+			<label for="returner" class="am-u-sm-12 am-form-label am-text-left">returner					<span class="tpl-form-line-small-title">returner</span></label>
+			<div class="am-u-sm-12">
+					<input type="text" 
+	value="{if condition="isset($zj_key_register_form.returner)"}{$zj_key_register_form.returner}{/if}"
+	class="tpl-form-input am-margin-top-xs" id="returner" name="returner" 
+	placeholder="请输入returner">			</div>
+	</div>
+		<div class="am-form-group">
+			<label for="returnadmin" class="am-u-sm-12 am-form-label am-text-left">returnadmin					<span class="tpl-form-line-small-title">returnadmin</span></label>
+			<div class="am-u-sm-12">
+					<input type="text" 
+	value="{if condition="isset($zj_key_register_form.returnadmin)"}{$zj_key_register_form.returnadmin}{/if}"
+	class="tpl-form-input am-margin-top-xs" id="returnadmin" name="returnadmin" 
+	placeholder="请输入returnadmin">			</div>
+	</div>
+		<div class="am-form-group">
+			<label for="mortgage" class="am-u-sm-12 am-form-label am-text-left">mortgage					<span class="tpl-form-line-small-title">mortgage</span></label>
+			<div class="am-u-sm-12">
+					<input type="text" 
+	value="{if condition="isset($zj_key_register_form.mortgage)"}{$zj_key_register_form.mortgage}{/if}"
+	class="tpl-form-input am-margin-top-xs" id="mortgage" name="mortgage" 
+	placeholder="请输入mortgage">			</div>
+	</div>
+		<div class="am-form-group">
+			<label for="note" class="am-u-sm-12 am-form-label am-text-left">note					<span class="tpl-form-line-small-title">note</span></label>
+			<div class="am-u-sm-12">
+					<input type="text" 
+	value="{if condition="isset($zj_key_register_form.note)"}{$zj_key_register_form.note}{/if}"
+	class="tpl-form-input am-margin-top-xs" id="note" name="note" 
+	placeholder="请输入note">			</div>
+	</div>
+		<div class="am-form-group">
+			<label for="sub" class="am-u-sm-12 am-form-label am-text-left">sub					<span class="tpl-form-line-small-title">sub</span></label>
+			<div class="am-u-sm-12">
+					<input type="text" 
+	value="{if condition="isset($zj_key_register_form.sub)"}{$zj_key_register_form.sub}{/if}"
+	class="tpl-form-input am-margin-top-xs" id="sub" name="sub" 
+	placeholder="请输入sub">			</div>
+	</div>
+		<div class="am-form-group">
+			<div class="am-u-sm-12 am-u-sm-push-12">
+					<button type="submit" class="am-btn am-btn-primary tpl-btn-bg-color-success ">提交</button>
+			</div>
+	</div>
+</form>
+						  </div>              
+					  </div>
+				</div><!--end  paddad-->
+			</div>
+		</div>
+		</div>	
+	</div>
+</div>
+</div>
+{/block}

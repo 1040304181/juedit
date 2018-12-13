@@ -1,0 +1,129 @@
+﻿{include file="Public/meta" /}
+
+{include file="Public/admin_header" /}
+
+{include file="Public/admin_left" /}
+
+<section class="Hui-article-box">
+	<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页
+		<span class="c-gray en">&gt;</span>
+		管理员管理
+		<span class="c-gray en">&gt;</span>
+		管理员列表 
+		<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a> 
+		<!-- <a href="javascript:;" onclick="datadel()" class="btn btn-danger radius r" style="line-height:1.6em;margin-top:3px" title="批量删除" ><i class="Hui-iconfont">&#xe6e2;</i> </a> -->
+		<a href="admin_add.html" onclick="" class="btn btn-primary radius r" style="line-height:1.6em;margin-top:3px" title="添加管理员"><i class="Hui-iconfont">&#xe600;</i> </a> 
+		
+	</nav>
+	<div class="Hui-article">
+
+		<article class="cl pd-20">
+			
+			<table class="table table-border table-bordered table-hover  XXL table-bg table-sort" cellspacing="0" width="100%" >
+				<thead>
+					<tr class="text-c ">
+						<th  scope="col" colspan="9">管理员列表
+										
+	
+		
+						</th>
+					</tr>
+					<tr class="text-c">
+						<th width="25">id</th>
+						<th width="50">登录名</th>
+						<th width="90">手机</th>
+						<th width="150">邮箱</th>
+						<th width="100">角色</th>
+						<th width="130">加入时间</th>
+						<th width="100">是否已启用</th>
+						<th width="100">操作</th>
+					</tr>
+				</thead>
+
+				</tbody>
+			</table>
+			
+		</article>
+	</div>
+</section>
+
+{include file="Public/admin_foot" /}
+
+<!--请在下方写此页面业务相关的脚本--> 
+<script type="text/javascript">
+$(document).ready(function(){
+	$('.table-sort').dataTable({
+		// 这里写一些基本配置，例如：
+        // "processing": true,
+        "serverSide": true,
+        // "bDestroy":true,
+     	// "scrollY": 200,
+         // "scrollX": true,
+
+		"order":[ [0,'asc'] ], // 设置默认排序的表格列[参数1是表格列的下标，从0开始]
+		"ajax": {               
+			"url": "{:url('admin/admin/getData')}", //请求数据的后台地址
+			"type": "POST",     // ajax的请求方法
+			  
+		},
+		"columns": [
+            { "data": "id" },
+            { "data": "admin_name" },
+            { "data": "admin_phone" },
+            { "data": "admin_email" },
+            { "data": "admin_role" ,
+				render : function(data, type,row) {
+					// global data7
+					// console.log(data)
+					switch (data) {
+						case 0: html = "超级管理员"
+							break;
+						case 1: html = "总编"
+							break;
+						case 2: html = "栏目主辑"
+							break;
+						case 3: html = "栏目编辑"
+							break;						
+					}
+					return html;
+				}
+
+        	},
+            { "data": "admin_join_time" },
+			{ "data": "is_del" ,
+				render : function(data, type,row) {
+					// global data7
+					data7=data
+					row_id=row.id
+					// console.log(data)
+					if (data) {
+						var html = "<span class='label label-success radius'>已启用</span>"
+					}else{
+						var html = "<span class='label radius'>已停用</span>"	
+					}
+					return html;
+				}
+			},
+			{ "data": "" ,
+				render : function(data, type,row) {
+					
+					if (data7) {
+						var html = "<a style=\"text-decoration:none\" onClick=\"\" href=\"/index.php/admin/admin/admin_stop/id/"+row_id+"\" title=\"停用\"><i class=\"Hui-iconfont\">&#xe631;</i></a>"
+					}else{
+						var html = "<a style=\"text-decoration:none\" onClick=\"\" href=\"/index.php/admin/admin/admin_start/id/"+row_id+"\" title=\"启用\"><i class=\"Hui-iconfont\">&#xe615;</i></a>"	
+					}
+						html += "<a title='编辑' href='/index.php/admin/admin/admin_edit/id/"+row_id+".html' onclick=\"\" class=\"ml-5\" style=\"text-decoration:none\"><i class=\"Hui-iconfont\">&#xe6df;</i></a>"
+						html += "<a title=\"删除\" href=\"javascript:;\" onclick=\"admin_del(this,"+row_id+")\" class=\"ml-5\" style=\"text-decoration:none\"><i class=\"Hui-iconfont\">&#xe6e2;</i></a>"
+					
+					return html;
+				}
+			},
+        ],
+	});
+
+});
+
+</script> 
+<!--/请在上方写此页面业务相关的脚本-->
+</body>
+</html>

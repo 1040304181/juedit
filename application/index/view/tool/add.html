@@ -1,0 +1,149 @@
+{extend name="layout" /}
+{block name="content"}
+<!-- 内容区域 -->
+<div class="tpl-content-wrapper">
+		<div class="row-content am-cf">
+		<div class="row">
+				<div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+						<div class="widget am-cf">
+								<div class="widget-head am-cf">
+										<div class="widget-title am-fl">新建tool</div>
+										<div class="widget-function am-fr">
+											<a href="javascript:;" class="am-icon-cog"></a>
+										</div>
+								</div>
+								<div class="widget-body am-fr">
+										<form class="am-form tpl-form-border-form" method="post">
+		<div class="am-form-group">
+			<label for="toolname" class="am-u-sm-12 am-form-label am-text-left">toolname					<span class="tpl-form-line-small-title">toolname</span></label>
+			<div class="am-u-sm-12">
+					<input type="text" 
+	value="{if condition="isset($tool.toolname)"}{$tool.toolname}{/if}"
+	class="tpl-form-input am-margin-top-xs" id="toolname" name="toolname" 
+	placeholder="请输入toolname">			</div>
+	</div>
+		<div class="am-form-group">
+			<label for="type" class="am-u-sm-12 am-form-label am-text-left">type					<span class="tpl-form-line-small-title">type</span></label>
+			<div class="am-u-sm-12">
+					<input type="text" 
+	value="{if condition="isset($tool.type)"}{$tool.type}{/if}"
+	class="tpl-form-input am-margin-top-xs" id="type" name="type" 
+	placeholder="请输入type">			</div>
+	</div>
+		<div class="am-form-group">
+			<label for="num" class="am-u-sm-12 am-form-label am-text-left">num					<span class="tpl-form-line-small-title">num</span></label>
+			<div class="am-u-sm-12">
+					<input type="text" 
+	value="{if condition="isset($tool.num)"}{$tool.num}{/if}"
+	class="tpl-form-input am-margin-top-xs" id="num" name="num" 
+	placeholder="请输入num">			</div>
+	</div>
+		<div class="am-form-group">
+			<label for="unit" class="am-u-sm-12 am-form-label am-text-left">unit					<span class="tpl-form-line-small-title">unit</span></label>
+			<div class="am-u-sm-12">
+					<input type="text" 
+	value="{if condition="isset($tool.unit)"}{$tool.unit}{/if}"
+	class="tpl-form-input am-margin-top-xs" id="unit" name="unit" 
+	placeholder="请输入unit">			</div>
+	</div>
+		<div class="am-form-group">
+			<label for="cause" class="am-u-sm-12 am-form-label am-text-left">cause					<span class="tpl-form-line-small-title">cause</span></label>
+			<div class="am-u-sm-12">
+					<input type="text" 
+	value="{if condition="isset($tool.cause)"}{$tool.cause}{/if}"
+	class="tpl-form-input am-margin-top-xs" id="cause" name="cause" 
+	placeholder="请输入cause">			</div>
+	</div>
+		<div class="am-form-group">
+			<label for="borrowtime" class="am-u-sm-12 am-form-label am-text-left">borrowtime					<span class="tpl-form-line-small-title">borrowtime</span></label>
+			<div class="am-u-sm-12">
+					<input type="text" 
+	value="{if condition="isset($tool.borrowtime)"}{$tool.borrowtime}{/if}"
+	class="tpl-form-input am-margin-top-xs" id="borrowtime" name="borrowtime" 
+	placeholder="请输入borrowtime">			</div>
+	</div>
+		<div class="am-form-group">
+			<label for="borrower" class="am-u-sm-12 am-form-label am-text-left">borrower					<span class="tpl-form-line-small-title">borrower</span></label>
+			<div class="am-u-sm-12">
+					<input type="text" 
+	value="{if condition="isset($tool.borrower)"}{$tool.borrower}{/if}"
+	class="tpl-form-input am-margin-top-xs" id="borrower" name="borrower" 
+	placeholder="请输入borrower">			</div>
+	</div>
+		<div class="am-form-group">
+			<label for="tel" class="am-u-sm-12 am-form-label am-text-left">tel					<span class="tpl-form-line-small-title">tel</span></label>
+			<div class="am-u-sm-12">
+					<input type="text" 
+	value="{if condition="isset($tool.tel)"}{$tool.tel}{/if}"
+	class="tpl-form-input am-margin-top-xs" id="tel" name="tel" 
+	placeholder="请输入tel">			</div>
+	</div>
+		<div class="am-form-group">
+			<label for="borrowadmin" class="am-u-sm-12 am-form-label am-text-left">borrowadmin					<span class="tpl-form-line-small-title">borrowadmin</span></label>
+			<div class="am-u-sm-12">
+					<input type="text" 
+	value="{if condition="isset($tool.borrowadmin)"}{$tool.borrowadmin}{/if}"
+	class="tpl-form-input am-margin-top-xs" id="borrowadmin" name="borrowadmin" 
+	placeholder="请输入borrowadmin">			</div>
+	</div>
+		<div class="am-form-group">
+			<label for="deadline" class="am-u-sm-12 am-form-label am-text-left">deadline					<span class="tpl-form-line-small-title">deadline</span></label>
+			<div class="am-u-sm-12">
+					<input type="text" 
+	value="{if condition="isset($tool.deadline)"}{$tool.deadline}{/if}"
+	class="tpl-form-input am-margin-top-xs" id="deadline" name="deadline" 
+	placeholder="请输入deadline">			</div>
+	</div>
+		<div class="am-form-group">
+			<label for="returntime" class="am-u-sm-12 am-form-label am-text-left">returntime					<span class="tpl-form-line-small-title">returntime</span></label>
+			<div class="am-u-sm-12">
+					<input type="text" 
+	value="{if condition="isset($tool.returntime)"}{$tool.returntime}{/if}"
+	class="tpl-form-input am-margin-top-xs" id="returntime" name="returntime" 
+	placeholder="请输入returntime">			</div>
+	</div>
+		<div class="am-form-group">
+			<label for="returnadmin" class="am-u-sm-12 am-form-label am-text-left">returnadmin					<span class="tpl-form-line-small-title">returnadmin</span></label>
+			<div class="am-u-sm-12">
+					<input type="text" 
+	value="{if condition="isset($tool.returnadmin)"}{$tool.returnadmin}{/if}"
+	class="tpl-form-input am-margin-top-xs" id="returnadmin" name="returnadmin" 
+	placeholder="请输入returnadmin">			</div>
+	</div>
+		<div class="am-form-group">
+			<label for="mortgage" class="am-u-sm-12 am-form-label am-text-left">mortgage					<span class="tpl-form-line-small-title">mortgage</span></label>
+			<div class="am-u-sm-12">
+					<input type="text" 
+	value="{if condition="isset($tool.mortgage)"}{$tool.mortgage}{/if}"
+	class="tpl-form-input am-margin-top-xs" id="mortgage" name="mortgage" 
+	placeholder="请输入mortgage">			</div>
+	</div>
+		<div class="am-form-group">
+			<label for="note" class="am-u-sm-12 am-form-label am-text-left">note					<span class="tpl-form-line-small-title">note</span></label>
+			<div class="am-u-sm-12">
+					<input type="text" 
+	value="{if condition="isset($tool.note)"}{$tool.note}{/if}"
+	class="tpl-form-input am-margin-top-xs" id="note" name="note" 
+	placeholder="请输入note">			</div>
+	</div>
+		<div class="am-form-group">
+			<label for="sub" class="am-u-sm-12 am-form-label am-text-left">sub					<span class="tpl-form-line-small-title">sub</span></label>
+			<div class="am-u-sm-12">
+					<input type="text" 
+	value="{if condition="isset($tool.sub)"}{$tool.sub}{/if}"
+	class="tpl-form-input am-margin-top-xs" id="sub" name="sub" 
+	placeholder="请输入sub">			</div>
+	</div>
+		<div class="am-form-group">
+			<div class="am-u-sm-12 am-u-sm-push-12">
+					<button type="submit" class="am-btn am-btn-primary tpl-btn-bg-color-success ">提交</button>
+			</div>
+	</div>
+</form>
+								</div>
+						</div>
+				</div>
+		</div>
+	</div>
+</div>
+{/block}

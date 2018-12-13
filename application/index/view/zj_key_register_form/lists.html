@@ -1,0 +1,118 @@
+{extend name="layout" /}
+{block name="content"}
+<div class="container">
+<div class="row">
+	<div class="col-md-12">
+		<div class="widget">
+			<div class="widget-head">
+			  <div class="pull-left" height="80">
+			  管理zj_key_register_form			  </div>
+			  <div class="widget-icons pull-right">
+				<a href="#" class="wminimize"><i class="icon-chevron-up"></i></a> 
+				<a href="#" class="wclose"><i class="icon-remove"></i></a>
+			  </div>  
+			  <div class="clearfix"></div>
+			</div>  
+			<div class="widget-content" >
+			<div class="padd">
+				<div class="form quick-post">
+				  <div class="form-horizontal">                        
+					  <div class="form-group">
+						<div class="widget-body  am-fr">
+	<div class="am-u-sm-12 am-u-md-6 am-u-lg-6">
+		<div class="am-form-group">
+			<div class="am-btn-toolbar">
+				<div class="am-btn-group am-btn-group-xs">
+					<a class="am-btn am-btn-default am-btn-success" href="{:url('zj_key_register_form/add')}">
+						<span class="am-icon-plus"></span> 新增
+					</a>
+					<!--
+					<button type="button" class="am-btn am-btn-default am-btn-secondary"><span class="am-icon-save"></span> 保存</button>
+					<button type="button" class="am-btn am-btn-default am-btn-warning"><span class="am-icon-archive"></span> 审核</button>
+					<button type="button" class="am-btn am-btn-default am-btn-danger"><span class="am-icon-trash-o"></span> 删除</button>
+					-->
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="am-u-sm-12">
+		<table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black " id="example-r">
+				<thead>
+					<tr>
+												<th>ID</th>
+												<th>name</th>
+												<th>NO</th>
+												<th>type</th>
+												<th>num</th>
+												<th>unit</th>
+												<th>cause</th>
+												<th>borrowtime</th>
+												<th>borrower</th>
+												<th>tel</th>
+												<th>borrowadmin</th>
+												<th>deadline</th>
+												<th>returntime</th>
+												<th>returner</th>
+												<th>returnadmin</th>
+												<th>mortgage</th>
+												<th>note</th>
+												<th>sub</th>
+												<th>操作</th>
+					</tr>
+				</thead>
+				<tbody>
+						{volist name="zj_key_register_formList" id="vo"}
+						<tr class="gradeX">
+																<td>{$vo.ID}</td>
+																<td>{$vo.name}</td>
+																<td>{$vo.NO}</td>
+																<td>{$vo.type}</td>
+																<td>{$vo.num}</td>
+																<td>{$vo.unit}</td>
+																<td>{$vo.cause}</td>
+																<td>{$vo.borrowtime}</td>
+																<td>{$vo.borrower}</td>
+																<td>{$vo.tel}</td>
+																<td>{$vo.borrowadmin}</td>
+																<td>{$vo.deadline}</td>
+																<td>{$vo.returntime}</td>
+																<td>{$vo.returner}</td>
+																<td>{$vo.returnadmin}</td>
+																<td>{$vo.mortgage}</td>
+																<td>{$vo.note}</td>
+																<td>{$vo.sub}</td>
+																<td>
+										<div class="tpl-table-black-operation">
+												<a  href="{:url('zj_key_register_form/edit', ['id'=>$vo['id']])}">
+													<i class="am-icon-pencil"></i> 编辑
+												</a>
+												<a href="{:url('zj_key_register_form/delete', ['id'=>$vo['id']])}" onclick='return confirm("确定删除吗？")' class="tpl-table-black-operation-del">
+													<i class="am-icon-trash"></i> 删除
+												</a>
+										</div>
+								</td>
+						</tr>
+						{/volist}
+						<!-- more data -->
+				</tbody>
+		</table>
+	</div>
+	<div class="am-u-lg-12 am-cf">
+
+			<div class="am-fr">
+					<ul class="am-pagination tpl-pagination">
+							{$zj_key_register_formList->render()}
+					</ul>
+			</div>
+	</div>
+</div>
+					  </div>       
+				  </div>
+				</div><!--end  paddad-->
+			</div>
+		</div>	
+		</div>	
+	</div>
+</div>
+</div>
+{/block}

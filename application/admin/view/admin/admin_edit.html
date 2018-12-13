@@ -1,0 +1,162 @@
+{include file="Public/meta" /}
+
+{include file="Public/admin_header" /}
+
+{include file="Public/admin_left" /}
+
+<section class="Hui-article-box">
+	<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i><a href="{:url('admin/admin/index')}">首页</a> 
+		<span class="c-gray en">&gt;</span>
+		<a href="{:url('admin/admin/index')}">管理员管理</a>
+		<span class="c-gray en">&gt;</span>
+		<a href="{:url('admin/admin/admin_list')}">管理员列表</a>
+		<span class="c-gray en">&gt;</span>
+		<a href="">编辑管理员</a> 
+		
+	</nav>
+	<div class="Hui-article">
+<article class="cl pd-20">
+	<form action="" method="post" class="form form-horizontal" id="form-admin-edit">
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>管理员：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="{$adminres.admin_name}" placeholder="" id="adminName" name="admin_name">
+				<input type="hidden" name="__token__" value="{$Request.token}" />
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>修改密码：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="password" class="input-text" autocomplete="off" value="" placeholder="密码" id="password" name="pwd">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>确认密码：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="password" class="input-text" autocomplete="off"  placeholder="确认新密码" id="password2" name="pwd_confirm">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>手机：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="{$adminres.admin_phone}" placeholder="" id="phone" name="admin_phone">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>邮箱：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" placeholder="@" name="admin_email" id="email" value="{$adminres.admin_email}">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3">角色：</label>
+			<div class="formControls col-xs-8 col-sm-9"> <span class="select-box" style="width:150px;">
+				<select class="select" name="admin_role" size="1" >
+					{if condition="'0' eq $adminres.admin_role"}
+					<option value="0" selected="selected" >超级管理员</option>
+					{else /} <option value="0" >超级管理员</option>
+					{/if}
+					{if condition="'1' eq $adminres.admin_role"}
+					<option value="1" selected="selected" >总编</option>
+					{else /} <option value="1" >总编</option>
+					{/if}
+					{if condition="'2' eq $adminres.admin_role"}
+					<option value="2" selected="selected" >栏目主辑</option>
+					{else /} <option value="2" >栏目主辑</option>
+					{/if}
+					{if condition="'3' eq $adminres.admin_role"}
+					<option value="3" selected="selected" >栏目编辑</option>
+					{else /} <option value="3" >栏目编辑</option>
+					{/if}
+
+
+
+				</select>
+				</span> </div>
+
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3">备注：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<textarea name="note" cols="" rows="" class="textarea"  placeholder="说点什么...100个字符以内" dragonfly="true" onKeyUp="textarealength(this,100)">{$adminres.note}</textarea>
+				<p class="textarea-numberbar"><em class="textarea-length">0</em>/100</p>
+			</div>
+		</div>
+		<div><input type="hidden" name="is_del" value=1><input type="hidden" name="admin_join_time" value="<?php echo date('Y-m-d H:i:s', strtotime('now'));?>"></div>
+		<div class="row cl">
+			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+				<input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+			</div>
+		</div>
+	</form>
+</article>
+
+
+{include file="Public/admin_foot" /}
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="/lib/jquery.validation/1.14.0/jquery.validate.js"></script> 
+<script type="text/javascript" src="/lib/jquery.validation/1.14.0/validate-methods.js"></script> 
+<script type="text/javascript" src="/lib/jquery.validation/1.14.0/messages_zh.js"></script> 
+<script type="text/javascript">
+$(function(){
+	$('.skin-minimal input').iCheck({
+		checkboxClass: 'icheckbox-blue',
+		radioClass: 'iradio-blue',
+		increaseArea: '20%'
+	});
+	
+	$("#form-admin-edit").validate({
+		rules:{
+			admin_name:{
+				required:true,
+				minlength:4,
+				maxlength:16
+			},
+			pwd:{
+				required:true,
+				minlength:4,
+				maxlength:10
+			},
+			pwd_confirm:{
+				required:true,
+				equalTo: "#password"
+			},
+			admin_phone:{
+				required:true,
+				isPhone:true,
+			},
+			admin_email:{
+				required:true,
+				email:true,
+			},
+			admin_role:{
+				required:true,
+				number:true,
+			},
+		},
+		onkeyup:false,
+		focusCleanup:true,
+		success:"valid",
+		// submitHandler:function(form){
+		// 	$(form).ajaxSubmit({ 
+		// 		dataType:"json",
+		// 		success:function(jsondata){ 
+		// 			// alert(jsondata.msg)
+		// 			$.Huimodalalert(jsondata.msg,2000)
+		// 		} 
+		// 	});
+		// 	var index = parent.layer.getFrameIndex(window.name);
+		// 	parent.$('.btn-refresh').click();
+		// 	parent.layer.close(index);
+		// }
+	});
+	$("#form-admin-edit").submit( );
+
+	// function(jsondata){ 
+	// 	alert(jsondata.msg)
+	// 	$.Huimodalalert(jsondata.msg,2000)
+	// }
+});
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
