@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:66:"F:\WWW\bick\public/../application/admin\view\admin\admin_list.html";i:1544445875;s:51:"F:\WWW\bick\application\admin\view\Public\meta.html";i:1544700015;s:59:"F:\WWW\bick\application\admin\view\Public\admin_header.html";i:1544509529;s:57:"F:\WWW\bick\application\admin\view\Public\admin_left.html";i:1544509777;s:57:"F:\WWW\bick\application\admin\view\Public\admin_foot.html";i:1544698006;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:66:"F:\WWW\bick\public/../application/admin\view\admin\admin_list.html";i:1544445875;s:51:"F:\WWW\bick\application\admin\view\Public\meta.html";i:1544711512;s:59:"F:\WWW\bick\application\admin\view\Public\admin_header.html";i:1544509529;s:57:"F:\WWW\bick\application\admin\view\Public\admin_left.html";i:1544509777;s:57:"F:\WWW\bick\application\admin\view\Public\admin_foot.html";i:1544698006;}*/ ?>
 ﻿<!--_meta 作为公共模版分离出去-->
 <!DOCTYPE HTML>
 <html>
@@ -11,8 +11,8 @@
 <link rel="Bookmark" href="favicon.ico" >
 <link rel="Shortcut Icon" href="favicon.ico" />
 <!--[if lt IE 9]>
-<script type="text/javascript" src="/lib/html5.js"></script>
-<script type="text/javascript" src="/lib/respond.min.js"></script>
+<script type="text/javascript" src="http://192.168.1.2/bick/public/lib/html5.js"></script>
+<script type="text/javascript" src="http://192.168.1.2/bick/public/lib/respond.min.js"></script>
 <![endif]-->
 <link rel="stylesheet" type="text/css" href="http://192.168.1.2/bick/public/static/h-ui/css/H-ui.min.css" />
 <link rel="stylesheet" type="text/css" href="http://192.168.1.2/bick/public/static/h-ui.admin/css/H-ui.admin.css" />
